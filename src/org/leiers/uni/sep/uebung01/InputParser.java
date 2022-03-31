@@ -2,14 +2,14 @@ package org.leiers.uni.sep.uebung01;
 
 import java.util.Scanner;
 
-public class Controller {
+public class InputParser {
     private static final Scanner scanner = new Scanner(System.in);
 
     public int acceptNumber() {
         askForInput();
         String stringInput = scanner.nextLine();
         while (!stringInput.matches("[0-9]+")) {
-            Model.model.getView().showError("Es werden nur Ganzzahlen akzeptiert!");
+            Launcher.launcher.getView().showError("Es werden nur Ganzzahlen akzeptiert!");
             askForInput();
             stringInput = scanner.nextLine();
         }
@@ -17,6 +17,6 @@ public class Controller {
     }
 
     private void askForInput() {
-        Model.model.getView().showMessage("Bitte gebe eine Zahl ein!" + "\n> ");
+        Launcher.launcher.getView().showMessage("Bitte gebe eine Zahl ein!" + "\n> ");
     }
 }

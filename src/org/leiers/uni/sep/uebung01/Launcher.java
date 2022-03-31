@@ -2,20 +2,20 @@ package org.leiers.uni.sep.uebung01;
 
 import lombok.Getter;
 
-public class Model {
+public class Launcher {
     @Getter
     private final View view;
     @Getter
-    private final Controller controller;
+    private final InputParser inputParser;
 
-    public Model() {
+    public Launcher() {
         this.view = new View();
-        this.controller = new Controller();
+        this.inputParser = new InputParser();
     }
 
     public void start() {
-        final int input1 = controller.acceptNumber();
-        final int input2 = controller.acceptNumber();
+        final int input1 = inputParser.acceptNumber();
+        final int input2 = inputParser.acceptNumber();
         view.showMessage("Solution is: " + calculateSolution(input1, input2));
     }
 
@@ -23,10 +23,10 @@ public class Model {
         return num1 + num2;
     }
 
-    public static Model model;
+    public static Launcher launcher;
 
     public static void main(String[] args) {
-        model = new Model();
-        model.start();
+        launcher = new Launcher();
+        launcher.start();
     }
 }
