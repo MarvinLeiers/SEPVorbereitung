@@ -1,7 +1,11 @@
 package org.leiers.uni.sep.uebung01;
 
+import lombok.Getter;
+
 public class Model {
+    @Getter
     private final View view;
+    @Getter
     private final Controller controller;
 
     public Model() {
@@ -17,14 +21,6 @@ public class Model {
 
     private int calculateSolution(final int num1, final int num2) {
         return num1 + num2;
-    }
-
-    public View getView() {
-        return view;
-    }
-
-    public Controller getController() {
-        return controller;
     }
 
     public static Model model;
