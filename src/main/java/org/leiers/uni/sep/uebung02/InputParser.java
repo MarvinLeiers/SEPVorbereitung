@@ -1,4 +1,4 @@
-package org.leiers.uni.sep.uebung01;
+package org.leiers.uni.sep.uebung02;
 
 import java.util.Scanner;
 
@@ -8,7 +8,7 @@ public class InputParser {
     public int acceptNumber() {
         askForInput();
         String stringInput = scanner.nextLine();
-        while (!stringInput.matches("[0-9]+")) {
+        while (!stringInput.matches("-?[0-9]+")) {
             Launcher.launcher.getView().showError("Es werden nur Ganzzahlen akzeptiert!");
             askForInput();
             stringInput = scanner.nextLine();
